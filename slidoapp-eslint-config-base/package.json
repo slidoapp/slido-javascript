@@ -1,0 +1,23 @@
+{
+  "name": "@slidoapp/eslint-config-base",
+  "version": "14.2.0-build.1",
+  "description": "Slido ESLINT config - typescript, mostly used for server-side code",
+  "main": "index.js",
+  "author": "sli.do s.r.o.",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "eslint-config-airbnb-base": "14.2.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "^3.6.1",
+    "@typescript-eslint/parser": "^3.6.1",
+    "eslint": "^7.4.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.22.0",
+    "prettier": "^2.0.0"
+  },
+  "repository": "git@github.com:slidoapp/slido-javascript.git"
+}
