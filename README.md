@@ -1,4 +1,4 @@
-# Slido JavaScript Style Guide (version 2021-11-03)
+# Slido JavaScript Style Guide (version 2022-01-18)
 
 We follow Airbnb JavaScript Style Guide (https://github.com/airbnb/javascript) and Airbnb React/JSX Style Guide (https://github.com/airbnb/javascript/tree/master/react). This document extends and/or overrides those guides, so it take precedence. We also define some basic rules for Redux and CSS stylings.
 
@@ -41,7 +41,7 @@ export const updateQuery = function doSomething(hasToOverwriteVersion) {};
 
 <a name="common-variable-names"></a>
 
-### [Common variable namess](#common-variable-names)
+### [Common variable names](#common-variable-names)
 
 To consistently write certain variable names, we use these rules:
 
@@ -56,6 +56,31 @@ examples:
 - `const imageId = 'x'`
 - `const src = 'x'`
 - `const imgSrc = 'x'`
+
+<a name="annotating-functions"></a>
+
+### [Annotating functions in TypeScript](#annotating-functions)
+
+We’ve seen way too many bugs, where (not only) TypeScript inferred a type, but developer’s intention was different. He just didn’t notice that the automatically inferred type was different.
+
+We have decided, that we want to always annotate our functions (input params and return values also). It serves both documentation purposes and developers intent.
+
+```javascript
+// BAD
+function isEven(value) {
+  return value % 2 === 0;
+}
+
+// BAD
+function isEven(value: number) {
+  return value % 2 === 0;
+}
+
+// GOOD
+function isEven(value: number): boolean {
+  return value % 2 === 0;
+}
+```
 
 <a name="react-images"></a>
 

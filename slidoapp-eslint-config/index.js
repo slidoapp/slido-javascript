@@ -7,8 +7,6 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react",
   ],
   settings: {
     "import/resolver": {
@@ -44,6 +42,10 @@ module.exports = {
       { vars: "all", args: "after-used", ignoreRestSiblings: true },
     ],
     // end of copied-from-airbnb-rules
+
+    // we do not agree with airbnb on this,
+    // even if it is more code we think code is more readable
+    "arrow-body-style": ["error", "always"],
 
     // Dusan hates this one
     "no-lonely-if": "off",
@@ -171,5 +173,12 @@ module.exports = {
     // we use typescript, and airbnb does not, so this has to change
     "react/jsx-filename-extension": ["error", { extensions: [".tsx"] }],
     "react/jsx-props-no-spreading": "off",
+    // Enforce a specific function type for function components.
+    // Here we want to have also 'arrow-function' to be allowed for namedComponents.
+    // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
+    'react/function-component-definition': ['error', {
+      namedComponents: ['function-declaration', 'function-expression', 'arrow-function'],
+      unnamedComponents: 'function-expression',
+    }],
   },
 };

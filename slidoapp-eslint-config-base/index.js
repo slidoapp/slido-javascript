@@ -6,7 +6,6 @@ module.exports = {
     "airbnb-base",
     "plugin:@typescript-eslint/recommended",
     "prettier",
-    "prettier/@typescript-eslint",
   ],
   settings: {
     "import/resolver": {
@@ -42,6 +41,10 @@ module.exports = {
       { vars: "all", args: "after-used", ignoreRestSiblings: true },
     ],
     // end of copied-from-airbnb-rules
+
+    // we do not agree with airbnb on this,
+    // even if it is more code we think code is more readable
+    "arrow-body-style": ["error", "always"],
 
     // Dusan hates this one
     "no-lonely-if": "off",
