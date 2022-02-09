@@ -1,3 +1,6 @@
+/**
+ * Slido ESLINT config - typescript and react, mostly used for client-side code
+ */
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
@@ -42,10 +45,6 @@ module.exports = {
       { vars: "all", args: "after-used", ignoreRestSiblings: true },
     ],
     // end of copied-from-airbnb-rules
-
-    // we do not agree with airbnb on this,
-    // even if it is more code we think code is more readable
-    "arrow-body-style": ["error", "always"],
 
     // Dusan hates this one
     "no-lonely-if": "off",
@@ -146,6 +145,16 @@ module.exports = {
     // Rules under this line are exclusive to this config. Everything above should
     // be same in all our configs.
 
+    // we do not agree with airbnb on this,
+    // even if it is more code we think code is more readable and generate niced diffs
+    "arrow-body-style": [
+      "error",
+      "as-needed",
+      {
+        requireReturnForObjectLiteral: true,
+      },
+    ],
+
     "import/extensions": [
       "error",
       "always",
@@ -176,9 +185,16 @@ module.exports = {
     // Enforce a specific function type for function components.
     // Here we want to have also 'arrow-function' to be allowed for namedComponents.
     // https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/function-component-definition.md
-    'react/function-component-definition': ['error', {
-      namedComponents: ['function-declaration', 'function-expression', 'arrow-function'],
-      unnamedComponents: 'function-expression',
-    }],
+    "react/function-component-definition": [
+      "error",
+      {
+        namedComponents: [
+          "function-declaration",
+          "function-expression",
+          "arrow-function",
+        ],
+        unnamedComponents: "function-expression",
+      },
+    ],
   },
 };

@@ -1,12 +1,11 @@
+/**
+ * Slido ESLINT config - typescript, mostly used for server-side code
+ */
 module.exports = {
   root: true,
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "import"],
-  extends: [
-    "airbnb-base",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-  ],
+  extends: ["airbnb-base", "plugin:@typescript-eslint/recommended", "prettier"],
   settings: {
     "import/resolver": {
       typescript: {},
@@ -41,10 +40,6 @@ module.exports = {
       { vars: "all", args: "after-used", ignoreRestSiblings: true },
     ],
     // end of copied-from-airbnb-rules
-
-    // we do not agree with airbnb on this,
-    // even if it is more code we think code is more readable
-    "arrow-body-style": ["error", "always"],
 
     // Dusan hates this one
     "no-lonely-if": "off",
@@ -144,6 +139,10 @@ module.exports = {
     // --------------------------------------------------------------------------
     // Rules under this line are exclusive to this config. Everything above should
     // be same in all our configs.
+
+    // we do not agree with airbnb on this,
+    // even if it is more code we think code is more readable and generate niced diffs
+    "arrow-body-style": ["error", "always"],
 
     "import/extensions": [
       "error",
