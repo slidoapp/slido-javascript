@@ -116,6 +116,7 @@ module.exports = {
         leadingUnderscore: "allow",
       },
       { selector: "typeLike", format: ["PascalCase"] },
+      { selector: "objectLiteralProperty", format: null },
     ],
     // renamed `ban-ts-ignore`
     // we don't allow usage of `@ts-ignore` and such
@@ -134,6 +135,22 @@ module.exports = {
         optionalDependencies: false,
         peerDependencies: false,
         bundledDependencies: false,
+      },
+    ],
+
+    // Forbid usage of non-boolean types in expressions where a boolean is expected.
+    // https://github.com/typescript-eslint/typescript-eslint/blob/main/packages/eslint-plugin/docs/rules/strict-boolean-expressions.md
+    "@typescript-eslint/strict-boolean-expressions": [
+      "error",
+      {
+        allowString: false,
+        allowNumber: false,
+        allowNullableObject: false,
+        allowNullableBoolean: false,
+        allowNullableString: false,
+        allowNullableNumber: false,
+        allowAny: false,
+        allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       },
     ],
     // --------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-# Slido JavaScript Style Guide (version 2022-02-09)
+# Slido JavaScript Style Guide (version 2022-06-28)
 
 We follow Airbnb JavaScript Style Guide (https://github.com/airbnb/javascript) and Airbnb React/JSX Style Guide (https://github.com/airbnb/javascript/tree/master/react). This document extends and/or overrides those guides, so it take precedence. We also define some basic rules for Redux and CSS stylings.
 
