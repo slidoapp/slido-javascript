@@ -1,6 +1,6 @@
 {
   "name": "@slidoapp/eslint-config-base",
-  "version": "15.0.0-build.3",
+  "version": "15.0.0-build.4",
   "description": "Slido ESLINT config - typescript, mostly used for server-side code",
   "main": "index.js",
   "author": "sli.do s.r.o.",

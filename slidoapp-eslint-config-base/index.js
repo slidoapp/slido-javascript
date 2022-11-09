@@ -153,6 +153,11 @@ module.exports = {
         allowRuleToRunWithoutStrictNullChecksIKnowWhatIAmDoing: false,
       },
     ],
+
+    // We want to avoid default exports as it makes hard to read and review code,
+    // and it hardens the tree shaking algorithms.
+    "import/no-default-export": "error",
+
     // --------------------------------------------------------------------------
     // Rules under this line are exclusive to this config. Everything above should
     // be same in all our configs.
